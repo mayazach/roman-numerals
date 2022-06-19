@@ -26,7 +26,9 @@ public class RomanNumeralsApp {
             System.out.println(exception.getMessage());
         }
         System.out.println("Testing parse function returns when input is valid:");
-        System.out.println(numeralGenerator.parse("MMCCCIX"));
-        System.out.println("OK");
+        System.out.println("MMCCCIX is: " + numeralGenerator.parse("MMCCCIX"));
+        System.out.println("MMMCMXCIX is: " + numeralGenerator.parse("MMMCMXCIX"));
+        System.out.println("I is: " + numeralGenerator.parse("I"));
+        System.out.println("CXLVII is: " + numeralGenerator.parse("CXLVII"));
     }
 }
