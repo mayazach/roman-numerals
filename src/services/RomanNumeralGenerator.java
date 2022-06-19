@@ -1,6 +1,7 @@
 package services;
 
 import java.util.Map;
+import java.util.regex.Pattern;
 
 public class RomanNumeralGenerator {
     private static final Map<Character,Integer> characterIntegerMap = Map.of(
@@ -12,11 +13,7 @@ public class RomanNumeralGenerator {
             'D', 500,
             'M', 1000
     );
-
-    private Boolean validateRoman(){
-        
-        return true;
-    }
+    private static final String romanRegEx = "M{0,3}(CM|DC{0,3}|CD|C{0,3})(XC|LX{0,3}|XL|X{0,3})(IX|VI{0,3}|IV|I{0,3})";
 
     public String generate(Integer number){
         if(number > 3999 || number < 0)
@@ -81,6 +78,8 @@ public class RomanNumeralGenerator {
     }
 
     public Integer parse(String roman){
+        if(!Pattern.matches(romanRegEx,roman))
+            throw new IllegalArgumentException("Please enter a valid roman number between 1 and 3999");
         return characterIntegerMap.get('X');
     }
 }

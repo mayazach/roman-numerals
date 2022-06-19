@@ -17,6 +17,16 @@ public class RomanNumeralsApp {
         System.out.println("723 is: " + numeralGenerator.generate(723));
         System.out.println("102 is: " + numeralGenerator.generate(102));
         System.out.println("43 is: " + numeralGenerator.generate(43));
-        System.out.println(numeralGenerator.parse("XX"));
+        System.out.println("Testing parse function");
+        System.out.println("Testing invalid input MMMM");
+        try {
+            System.out.println(numeralGenerator.parse("MMMM"));
+        }
+        catch (IllegalArgumentException exception){
+            System.out.println(exception.getMessage());
+        }
+        System.out.println("Testing parse function returns when input is valid:");
+        System.out.println(numeralGenerator.parse("MMCCCIX"));
+        System.out.println("OK");
     }
 }
